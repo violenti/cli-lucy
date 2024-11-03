@@ -1,16 +1,8 @@
 ##
-def list_repo(organization, git_client, project):
+#import json
+def list_repo(organization, git_client, project, output):
     repos = git_client.get_repositories(project=project)
-    """
-    for repo in repos:
-        with open("repos.txt",'w') as file:
-            file.write(repo)
-            f.close
-    """
-    print(f"Repositorios en el proyecto '{project}':")
-    for repo in repos:
-
-        print(f"- Nombre: {repo.name}, ID: {repo.id}, URL: {repo.web_url}")
-    
-
-
+    with open(output,'w') as file:
+        for repo in repos:
+            file.write(repo.name + "\n")
+   
