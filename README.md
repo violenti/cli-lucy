@@ -14,7 +14,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 
 ```bash
-   export PAT="mdolxjugnkj546xxxxxxx" 
+export PAT="mdolxjugnkj546xxxxxxx" 
 ```
 
 ```python
