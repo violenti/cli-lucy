@@ -93,17 +93,6 @@ def main():
         list_repos = list_repo(organization_url, git_client, project,output)
     elif args.create and args.list is False:
        create = create_repo(organization_url,git_client,project, args.input)
-       #print("command not found")
-    '''
-    #repository = args.input
-    if project or organization_url or repository is None:
-        print ("Please, the values project, organization and repository are requiered")
-    else: 
-        with open(repository,encoding='utf-8') as file:
-            for line in file:
-                repo_name = line.split()
-                time.sleep(1)
-                list_repository = create_repo(organization_url,project,repo_name)
-    '''
+
 if __name__ == '__main__':
     main()
