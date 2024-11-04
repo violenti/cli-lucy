@@ -3,6 +3,9 @@ from msrest.authentication import BasicAuthentication
 import os,sys
 import argparse
 from get_repository import list_repo
+from create_repository import create_repo
+
+
 
 personal_access_token = os.environ["PAT"]
 
@@ -59,11 +62,14 @@ def parse_args():
                        type=str, required=True)
     parser.add_argument('-o','--output',
                         help="file generate",
-                        type=str, required=False)
-    parser.add_argument('-i', '--input', help="file from will your list of repository",
-                       type=str, required=False)
+                        required=False)
+    parser.add_argument('-i', '--input',help="file from will your list of repository")
     parser.add_argument('-org', '--organization', help="file from will your list of repository",
                        type=str, required=True)
+    parser.add_argument('-l', '--list', help="list all repositories",
+                        action='store_true')
+    parser.add_argument('-c', '--create', help="create repositories",
+                        action='store_true')
     return parser.parse_args()
 
 args = parse_args()
@@ -79,11 +85,15 @@ def main():
     project = args.project
     organization_url = args.organization
     output = args.output
+    input = args.input
     credentials = BasicAuthentication('', personal_access_token)
     connection = Connection(base_url=organization_url, creds=credentials)
     git_client = connection.clients.get_git_client()
-    list_repos = list_repo(organization_url, git_client, project,output)
-
+    if args.list and args.create is False :
+        list_repos = list_repo(organization_url, git_client, project,output)
+    elif args.create and args.list is False:
+       create = create_repo(organization_url,git_client,project, args.input)
+       #print("command not found")
     '''
     #repository = args.input
     if project or organization_url or repository is None:

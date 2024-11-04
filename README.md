@@ -12,11 +12,22 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
 ## Usage
 
-```python
 
-
-
+```bash
+   export PAT="mdolxjugnkj546xxxxxxx" 
 ```
+
+```python
+Create repository
+python main.py -c  -p "projectname" -org "https://dev.azure.com/yourorg" -i repos.txt
+```
+
+
+```python
+List repository
+python main.py -l  -p "projectname" -org "https://dev.azure.com/yourorg" -o repos.txt
+```
+
 
 ## Contributing
 
