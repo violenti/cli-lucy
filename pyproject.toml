@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cli-lucy"
+version = "0.1.0"
+description = "Lucy  is a Python CLI for automatization of Azure Devops."
+authors = ["David Fernandez"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+azure-devops = "^7.1.0b4"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

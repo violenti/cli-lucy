@@ -1,9 +1,10 @@
 # Created by venv; see https://docs.python.org/3/library/venv.html
-*
+#*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+pyvenv.cfg
 
 # C extensions
 *.so
@@ -109,7 +110,7 @@ ipython_config.py
 #   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
 #   in version control.
 #   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
+
 .pdm-python
 .pdm-build/
 

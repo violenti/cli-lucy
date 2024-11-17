@@ -1,5 +1,6 @@
 from azure.devops.v7_1.build.models import BuildDefinition, BuildRepository, AgentPoolQueue
 import time
+from check_file import load_repo_names
 
 """
 def read_repos(input):
@@ -10,11 +11,14 @@ def read_repos(input):
 def create_build(project,build_client,input):
     
     yaml_path = "azure-pipelines.yml"
+    repo_names = load_repo_names(input)
 
+    '''
     with open(input,'r') as file:
         for line in file:
             repo_name = line.strip()
-
+    ''' 
+    for repo_name in repo_names:  
             build_definition = BuildDefinition(
                 name=repo_name,
                 repository=BuildRepository(

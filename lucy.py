@@ -53,7 +53,8 @@ vault = """
 print (vault)
 
 def parse_args(): 
-    """_summary_
+    """
+    Function 
     """
     parser = argparse.ArgumentParser(epilog='\tExample:\r\npython'
                                     + sys.argv[0] +
@@ -80,10 +81,8 @@ args = parse_args()
 
 
 def main():
-    """_summary_
+    """
 
-    Args:
-        args (_type_, optional): _description_. Defaults to None.
     """
     project = args.project
     organization_url = args.organization
@@ -94,7 +93,7 @@ def main():
     git_client = connection.clients.get_git_client()
     build_client = connection.clients.get_build_client()
 
-    if args.list and args.create is False :
+    if args.list and args.create is False:
         list_repos = list_repo(organization_url, git_client, project,output)
     elif args.create and args.list is False:
        create = create_repo(organization_url,git_client,project, args.input)
