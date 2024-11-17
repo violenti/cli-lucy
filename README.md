@@ -1,20 +1,59 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Lucy &#x1F40D;
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Lucy  is a Python CLI for automatization of Azure Devops.
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+# Feature 
+    
+* Create a repository from a list of names in a file
+* Create  a Pipeline from a list of names in a file
+* List repositories and save them to a file
+
+## Installation
+
+Lucy use Poetry as package manager.
+
+Please, if you  do not  Poetry installed on your computer, you can  install it by  following the instructions below:  https://python-poetry.org/docs/#installation
+
+
+```bash
+poetry shell
+
+poetry install
+```
+
+## Usage
+
+Lucy use your  PAT of Azure Devops
+
+```bash
+export PAT="D5xxxxxxxxxx"
+
+```
+
+# Commands
+
+# Arguments and Description of `parse_args`
+
+| Argument             | Description                                                      |
+|----------------------|------------------------------------------------------------------|
+| `-p`, `--project`    | The name of the Azure DevOps project. This argument is required. |
+| `-o`, `--output`     | The file where results will be generated. This argument is optional. |
+| `-i`, `--input`      | The input file containing the list of repositories.             |
+| `-org`, `--organization` | The name of the Azure DevOps organization. This argument is required. |
+| `-l`, `--list`       | Lists all repositories in the specified project. This is a **flag**. |
+| `-c`, `--create`     | Creates repositories based on the provided input file. This is a **flag** 
+
+
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
